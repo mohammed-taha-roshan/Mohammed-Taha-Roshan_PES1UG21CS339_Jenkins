@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    sh "g++ Jenkinfile.cpp -o PES1UG21CS339-1"  // Compile with desired flags
+                    sh "g++ Jenkinfiles.cpp -o PES1UG21CS339-1"  // Compile with desired flags
                 }
             }
         }
