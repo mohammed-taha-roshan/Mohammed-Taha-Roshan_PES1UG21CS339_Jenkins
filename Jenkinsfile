@@ -5,14 +5,14 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    sh "g++ YOUR_CPP_FILE_NAME.cpp -o YOUR_SRN-1"  // Compile with desired flags
+                    sh "g++ Jenkinfile.cpp -o PES1UG21CS339-1"  // Compile with desired flags
                 }
             }
         }
 
         stage('Test') {
             steps {
-                sh "./YOUR_SRN-1"  // Run the compiled executable
+                sh "./PES1UG21CS339-1"  // Run the compiled executable
             }
         }
 
