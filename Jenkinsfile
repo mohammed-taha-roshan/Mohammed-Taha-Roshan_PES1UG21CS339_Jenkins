@@ -12,7 +12,8 @@ pipeline {
 
         stage('Test') {
             steps {
-                sh "./PES1UG21CS339-1"  // Run the compiled executable
+                // **Intentional error:** Introduce an undefined variable
+                sh "undefined_variable ./PES1UG21CS339-1"  // Run the compiled executable (error occurs here)
             }
         }
 
@@ -33,7 +34,7 @@ pipeline {
             echo "Pipeline successful!"
         }
         failure {
-            echo "Pipeline failed!"
+            echo "Pipeline failed!"  // This will be printed upon failure
         }
     }
 }
