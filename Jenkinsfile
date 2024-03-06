@@ -5,7 +5,7 @@ pipeline {
             steps {
                 script {
                     echo 'Compiling the C++ file...'
-                    sh "g -o PES1UG21CS339-1 PES1UG21CS339.cpp"
+                    sh "g++ -o PES1UG21CS339-1 PES1UG21CS339.cpp"
                 }
             }
         }
@@ -22,7 +22,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deployment stage'
-            }
+            }}
         }
     }
 
