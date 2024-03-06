@@ -20,7 +20,7 @@ pipeline {
         }
 
         stage('Deploy') {
-            steps {
+            stoops {
                  echo 'Deployment stage'
             }
         }
