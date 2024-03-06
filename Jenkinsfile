@@ -1,39 +1,34 @@
 pipeline {
     agent any
-
     stages {
         stage('Build') {
             steps {
                 script {
-                    sh "g++ Jenkinfiles.cpp -o PES1UG21CS339-1"  // Compile with desired flags
+                    echo 'Compiling the C++ file...'
+                    sh "g++ -o PES1UG21CS655-1 PES1UG21CS655.cpp"
                 }
             }
         }
 
         stage('Test') {
             steps {
-                sh "./PES1UG21CS339-1"  // Run the compiled executable
+                script {
+                    echo 'Running the C++ program...'
+                    sh "./PES1UG21CS339-1"
+                }
             }
         }
 
         stage('Deploy') {
             steps {
-                // Add your deployment steps here
-                echo "Deploying the application..."
+                echo 'Deployment stage'
             }
         }
     }
 
     post {
-        always {
-            // Cleanup actions, always executed
-            echo "Cleaning up workspace..."
-        }
-        success {
-            echo "Pipeline successful!"
-        }
         failure {
-            echo "Pipeline failed!"
+            echo 'Pipeline failed!'
         }
     }
 }
